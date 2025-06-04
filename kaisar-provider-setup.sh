@@ -65,7 +65,7 @@ rm kaisar-provider-cli.tar.gz
 # Install dependencies (if package.json exists)
 if [ -f package.json ]; then
   echo "Installing dependencies..."
-  npm install --production
+  npm install
 else
   echo "Error: package.json not found in extracted package."
   exit 1
