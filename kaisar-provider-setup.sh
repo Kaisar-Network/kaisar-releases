@@ -60,7 +60,7 @@ fi
 
 echo "Extracting package..."
 tar -xzf kaisar-provider-cli.tar.gz
-rm kaisar-provider.tar.gz
+rm kaisar-provider-cli.tar.gz
 
 # Install dependencies (if package.json exists)
 if [ -f package.json ]; then
