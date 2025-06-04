@@ -51,15 +51,15 @@ sudo mkdir -p "$DATA_DIR"
 sudo chown $(whoami) "$DATA_DIR"
 
 # Download and extract the release package
-echo "Downloading Kaisar Provider CLI package..."
-curl -L "$DOWNLOAD_URL" -o kaisar-provider.tar.gz
+echo "Downloading Kaisar Provider CLI package from $DOWNLOAD_URL..."
+curl -fL "$DOWNLOAD_URL" -o kaisar-provider-cli.tar.gz
 if [ $? -ne 0 ]; then
   echo "Error: Unable to download package."
   exit 1
 fi
 
 echo "Extracting package..."
-tar -xzf kaisar-provider.tar.gz
+tar -xzf kaisar-provider-cli.tar.gz
 rm kaisar-provider.tar.gz
 
 # Install dependencies (if package.json exists)
