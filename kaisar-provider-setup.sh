@@ -74,6 +74,7 @@ fi
 # Link CLI globally với biến môi trường KAISAR_DATA_DIR
 export KAISAR_DATA_DIR="$DATA_DIR"
 echo "Linking CLI globally..."
+cd "$INSTALL_DIR"
 npm link
 if [ $? -ne 0 ]; then
   echo "Error: Unable to link CLI globally. Please check your npm permissions."
@@ -82,7 +83,7 @@ fi
 
 # Verify installation
 echo "Verifying installation..."
-kaisar hello
+kaisar
 if [ $? -eq 0 ]; then
   echo "Installation successful! You can now use the CLI with the 'kaisar' command."
   echo "Example: kaisar start (to start the Provider Application)"
