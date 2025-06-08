@@ -45,10 +45,10 @@ INSTALL_DIR="/opt/kaisar-provider-cli-$LATEST_VERSION"
 mkdir -p "$INSTALL_DIR"
 cd "$INSTALL_DIR"
 
-# Tạo thư mục lưu data chuẩn Linux và cấp quyền
+# Create data directory with proper permissions for all users
 DATA_DIR="/var/lib/kaisar-provider-cli"
 sudo mkdir -p "$DATA_DIR"
-sudo chown $(whoami) "$DATA_DIR"
+sudo chmod 777 "$DATA_DIR"
 
 # Download and extract the release package
 echo "Downloading Kaisar Provider CLI package from $DOWNLOAD_URL..."
@@ -71,7 +71,7 @@ else
   exit 1
 fi
 
-# Link CLI globally với biến môi trường KAISAR_DATA_DIR
+# Link CLI globally with KAISAR_DATA_DIR environment variable
 export KAISAR_DATA_DIR="$DATA_DIR"
 echo "Linking CLI globally..."
 cd "$INSTALL_DIR"
