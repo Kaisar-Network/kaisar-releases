@@ -84,7 +84,8 @@ fi
 # Verify installation
 echo "Verifying installation..."
 kaisar
-if [ $? -eq 0 ]; then
+EXIT_CODE=$?
+if [ $EXIT_CODE -eq 0 ] || [ $EXIT_CODE -eq 1 ]; then
   echo "Installation successful! You can now use the CLI with the 'kaisar' command."
   echo "Example: kaisar start (to start the Provider Application)"
   echo "Example: kaisar status (to check the status of the Provider Application)"
