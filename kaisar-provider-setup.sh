@@ -81,6 +81,8 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+pm2 delete kaisar-provider || true
+
 # Verify installation
 echo "Verifying installation..."
 kaisar
